@@ -1,9 +1,10 @@
-require "phonetic_matcher"
+require_relative "../lib/phonetic_matcher"
 
 class PhoneticSearcher
 
-  def initialize
+  def initialize surname_list
     @matcher = PhoneticMatcher.new
+    @surname_hash = generate_surname_hash surname_list
   end
 
   def generate_surname_hash surname_list
@@ -15,8 +16,8 @@ class PhoneticSearcher
     surname_hash
   end
 
-  def find_matches name, dictionary
+  def find_matches name
     key = @matcher.generate_name_key name
-    dictionary[key]
+    @surname_hash[key]
   end
 end

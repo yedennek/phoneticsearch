@@ -1,6 +1,6 @@
-require 'rules'
+require 'phonetic_matcher'
 
-describe Rules do
+describe PhoneticMatcher do
   describe "#ignore_non_alphabetic_characters" do
     it "returns the input with non-alphabetic characters removed" do
       expect(subject.ignore_non_alphabetic_characters "Nest O'Mallet").to eq "NestOMallet"

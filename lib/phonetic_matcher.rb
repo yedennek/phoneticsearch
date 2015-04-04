@@ -1,4 +1,4 @@
-class Rules
+class PhoneticMatcher
 
   def ignore_non_alphabetic_characters input
     input.gsub(/[^a-zA-Z]/, "")

@@ -1,4 +1,4 @@
-require 'phonetic_matcher'
+require_relative '../lib/phonetic_matcher'
 
 describe PhoneticMatcher do
 

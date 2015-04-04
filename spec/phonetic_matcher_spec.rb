@@ -1,6 +1,13 @@
 require 'phonetic_matcher'
 
 describe PhoneticMatcher do
+
+  describe "#generate_name_key" do
+    it "applies phonetic algorithm to input names to generate a hash key" do
+      expect(subject.generate_name_key "Nest O'Mallet").to eq "mcdmld"
+    end
+  end
+
   describe "#ignore_non_alphabetic_characters" do
     it "returns the input with non-alphabetic characters removed" do
       expect(subject.ignore_non_alphabetic_characters "Nest O'Mallet").to eq "NestOMallet"

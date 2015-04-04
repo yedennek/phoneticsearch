@@ -1,5 +1,13 @@
 class PhoneticMatcher
 
+  def generate_name_key input
+    lower_case = input.downcase
+    remove_alphabetic = ignore_non_alphabetic_characters lower_case
+    remove_vowels = discard_vowels remove_alphabetic
+    replace_equivalents = replace_equivalent_letters remove_vowels
+    discard_consecutive_duplicates replace_equivalents
+  end
+
   def ignore_non_alphabetic_characters input
     input.gsub(/[^a-zA-Z]/, "")
   end
